@@ -67,7 +67,7 @@ Subramanian, A., Tamayo, P., Mootha, V. K., Mukherjee, S., Ebert, B. L., Gillett
    enrichPath <- pathEnrich(geneList = rownames(diffExprs), geneSets = geneSets, universe = 6536)}
    
 ## Small example with gene sets consist of KEGG pathways only
-geneSets <- getGmt(system.file("extdata", "c2.cp.kegg.v5.0.symbols.gmt", package="splineTCDiffExpr"))
+geneSets <- getGmt(system.file("extdata", "c2.cp.kegg.v5.0.symbols.gmt", package="splineTimeR"))
 data(TCsimData)
 diffExprs <- splineDiffExprs(eSetObject = TCsimData, df = 3, cutoff.adj.pVal = 0.01, reference = "T1")
 enrichPath <- pathEnrich(geneList = rownames(diffExprs), geneSets = geneSets, universe = 6536)

@@ -1,7 +1,7 @@
-%\VignetteIndexEntry{splineTCDiffExpr}
+%\VignetteIndexEntry{splineTimeR}
 %\VignetteDepends{}
 %\VignetteKeywords{spline regression, time-sourse differential expression, network reconstruction, network properties, pathway enrichment analysis}
-%\VignettePackage{splineTCDiffExpr}
+%\VignettePackage{splineTimeR}
 
 % -*- mode: noweb; noweb-default-code-mode: R-mode; -*-
 \documentclass[a4paper, 11pt]{article}
@@ -16,7 +16,7 @@
 \begin{document}
 \SweaveOpts{concordance=TRUE}
 
-\title{\bf Using splineTCDiffExpr package}
+\title{\bf Using splineTimeR package}
 \author{Agata Michna}
 
 \maketitle
@@ -52,7 +52,7 @@ Gene expression data must be provided as a Biobase object of class {\tt Expressi
 Replicates are not required. The time points for compared treatment groups should be identical. Visualisation of results is demonstrated using simulated data ({\tt TCsimData}).
 
 <<eval=TRUE, echo=TRUE>>=
-library(splineTCDiffExpr)
+library(splineTimeR)
 data(TCsimData)
 head(pData(TCsimData),8)
 @
@@ -251,6 +251,6 @@ Examplary figures ploted in .pdf files are shown below.
 \end{figure}
 
 \bibliographystyle{apalike}
-\bibliography{splineTCDiffExpr}
+\bibliography{splineTimeR}
 
 \end{document}
