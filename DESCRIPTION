@@ -3,7 +3,7 @@ Type: Package
 Title: Time-course differential gene expression data analysis using
         spline regression models followed by gene association network
         reconstruction
-Version: 1.0.0
+Version: 1.1.0
 Date: 2015-09-30
 Author: Agata Michna
 Maintainer: Herbert Braselmann <braselm@helmholtz-muenchen.de>, Agata Michna <agata.michna@helmholtz-muenchen.de>
