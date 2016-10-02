@@ -112,7 +112,7 @@ splinePlot(eSetObject = TCsimData, df = 3,
 
 The {\tt pathEnrich} function performs a pathway enrichment analysis of defined genes ({\tt geneList}). Collection of curated gene sets ({\tt geneSets}) representing metabolic and signaling pathways has to be downloaded from a database of interest in Gene Matrix Transposed file format (*.gmt), where each gene set is described by a pathway name, a description, and the genes in the gene set. Two examples are shown bellow to demonstrate how to define {\tt geneSets} object.
 
-The variable {\tt universe} represents a total number of genes that were probed in the initial experiment, e.g. the number of all genes on a microarray. If {\tt universe} is not definied, {\tt universe} is the number of all genes that can be mapped to any pathways in the chosen database.
+The variable {\tt universe} represents a total number of genes that were probed in the initial experiment, e.g. the number of all genes on a microarray. If {\tt universe} is not defined, {\tt universe} is the number of all genes that can be mapped to any pathways in the chosen database.
 
 The result table contains the name of the enriched pathway ({\tt pathway}), the gene set description ({\tt description}), the total number of genes in the pathway ({\tt genes\underline{ }in\underline{ }pathway}), the number of matched genes from the given gene set ({\tt matches}), the percentage of matched genes referred to the total number of known genes in the pathway ({\tt \%\underline{ }match}), the p-value ({\tt pValue}), Benjamini-Hochberg adjucted p-value ({\tt adj.pValue}), and a list of genes that are part of the pathway ({\tt overlap}). Statistical significance was determined by hypergeometric test (Fisher's exact test).
 
@@ -163,10 +163,10 @@ The {\tt splineNetRecon} function reconstructs gene association networks from ti
 
 Gene association network reconstruction is done for a selected type of {\tt Treatment}. This allows to identify regulatory associations between genes under a certain condition (treatment). First, a {\tt longitudinal} data object of the gene expression data with possible replicates is created. This object is used to estimate the partial correlation with the selected shrinkage method ({\tt dynamic} or {\tt static}) with the {\tt ggm.estimate.pcor} function (for details see {\tt ggm.estimate.pcor} function help). Finally, the the {\tt network.test.edges} function estimates the probabilities for all possible edges and lists them in descending order (for details see {\tt network.test.edges} help). 
 
-An object or list of objects of class {\tt igraph} with all edges that exceeded the probability-cutoff ({\tt cutoff.ggm}) is returned. If more than one value for {\tt cutoff.ggm} is definied than function returns a {\tt list} of objects of class {\tt igraph} for each definied {\tt cutoff.ggm} value. Otherwise a single object of class {\tt igraph} with one selected probability is returned.
+An object or list of objects of class {\tt igraph} with all edges that exceeded the probability-cutoff ({\tt cutoff.ggm}) is returned. If more than one value for {\tt cutoff.ggm} is defined than function returns a {\tt list} of objects of class {\tt igraph} for each defined {\tt cutoff.ggm} value. Otherwise a single object of class {\tt igraph} with one selected probability is returned.
 \\
 
-For one definied cut-off:
+For one defined cut-off:
 <<single_igr, eval=FALSE, echo=TRUE>>=
 igr <- splineNetRecon(eSetObject = TCsimData, treatmentType = "T2", 
                       probesForNR = rownames(diffExprs), 
@@ -179,11 +179,11 @@ plot(igr, vertex.label = NA, vertex.size = 3, main = "igraph_0.7")
 %\begin{figure}[H]
 %   \centering
 %   \begin{tabular}{@{}c@{\hspace{.5cm}}c@{}}
-%       \includegraphics[page=1,width=.5\textwidth]{single_igraph}
+%       \includegraphics[page=1,width=.5\textwidth]{plot_igr1}
 %   \end{tabular}
 %\end{figure}
 
-For more definied cut-off values:
+For more defined cut-off values:
 <<two_igraphs, eval=TRUE, echo=TRUE>>=
 igr <- splineNetRecon(eSetObject = TCsimData, treatmentType = "T2", 
                       probesForNR = rownames(diffExprs), 
@@ -197,8 +197,8 @@ plot(igr[[2]], vertex.label = NA, vertex.size = 3, main = "igraph_0.9")
 \begin{figure}[H]
    \centering
    \begin{tabular}{@{}c@{\hspace{.5cm}}c@{}}
-       \includegraphics[page=1,width=.5\textwidth]{igraph_list} & 
-       \includegraphics[page=2,width=.5\textwidth]{igraph_list} \\[.5cm]
+       \includegraphics[page=1,width=.5\textwidth]{plot_igrlist} & 
+       \includegraphics[page=2,width=.5\textwidth]{plot_igrlist} \\[.5cm]
    \end{tabular}
 \end{figure}
 
