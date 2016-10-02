@@ -167,29 +167,29 @@ An object or list of objects of class {\tt igraph} with all edges that exceeded 
 \\
 
 For one definied cut-off:
-<<eval=TRUE, echo=TRUE>>=
+<<single_igr, eval=FALSE, echo=TRUE>>=
 igr <- splineNetRecon(eSetObject = TCsimData, treatmentType = "T2", 
                       probesForNR = rownames(diffExprs), 
                       cutoff.ggm = 0.7, method = "dynamic")
 @
-<<single_igraph, fig=TRUE, prefix=FALSE, echo=TRUE, include=FALSE>>=
+<<plot_igr1, eval=FALSE, fig=TRUE, prefix=FALSE, echo=TRUE, include=FALSE>>=
 plot(igr, vertex.label = NA, vertex.size = 3, main = "igraph_0.7")
 @
 
-\begin{figure}[H]
-   \centering
-   \begin{tabular}{@{}c@{\hspace{.5cm}}c@{}}
-       \includegraphics[page=1,width=.5\textwidth]{single_igraph}
-   \end{tabular}
-\end{figure}
+%\begin{figure}[H]
+%   \centering
+%   \begin{tabular}{@{}c@{\hspace{.5cm}}c@{}}
+%       \includegraphics[page=1,width=.5\textwidth]{single_igraph}
+%   \end{tabular}
+%\end{figure}
 
 For more definied cut-off values:
-<<eval=TRUE, echo=TRUE>>=
+<<two_igraphs, eval=TRUE, echo=TRUE>>=
 igr <- splineNetRecon(eSetObject = TCsimData, treatmentType = "T2", 
                       probesForNR = rownames(diffExprs), 
                       cutoff.ggm = c(0.8,0.9), method = "dynamic")
 @
-<<igraph_list, fig=TRUE, prefix=FALSE, echo=TRUE, include=FALSE>>=
+<<plot_igrlist, fig=TRUE, prefix=FALSE, echo=TRUE, include=FALSE>>=
 plot(igr[[1]], vertex.label = NA, vertex.size = 3, main = "igraph_0.8")
 plot(igr[[2]], vertex.label = NA, vertex.size = 3, main = "igraph_0.9")
 @
