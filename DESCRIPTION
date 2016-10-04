@@ -3,10 +3,10 @@ Type: Package
 Title: Time-course differential gene expression data analysis using
         spline regression models followed by gene association network
         reconstruction
-Version: 1.1.2
-Date: 2015-09-30
+Version: 1.1.3
+Date: 2016-10-04
 Author: Agata Michna
-Maintainer: Herbert Braselmann <braselm@helmholtz-muenchen.de>, Agata Michna <agata.michna@helmholtz-muenchen.de>
+Maintainer: Herbert Braselmann <braselm@helmholtz-muenchen.de>
 Depends: R (>= 3.3), Biobase, igraph, limma, GSEABase, gtools, splines,
         GeneNet (>= 1.2.13), longitudinal (>= 1.1.12), FIs
 Description: This package provides functions for differential gene

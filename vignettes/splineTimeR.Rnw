@@ -167,21 +167,21 @@ An object or list of objects of class {\tt igraph} with all edges that exceeded 
 \\
 
 For one defined cut-off:
-<<single_igr, eval=FALSE, echo=TRUE>>=
+<<single_igr, eval=TRUE, echo=TRUE>>=
 igr <- splineNetRecon(eSetObject = TCsimData, treatmentType = "T2", 
                       probesForNR = rownames(diffExprs), 
                       cutoff.ggm = 0.7, method = "dynamic")
 @
-<<plot_igr1, eval=FALSE, fig=TRUE, prefix=FALSE, echo=TRUE, include=FALSE>>=
+<<plot_igr1, eval=TRUE, fig=TRUE, prefix=FALSE, echo=TRUE, include=FALSE>>=
 plot(igr, vertex.label = NA, vertex.size = 3, main = "igraph_0.7")
 @
 
-%\begin{figure}[H]
-%   \centering
-%   \begin{tabular}{@{}c@{\hspace{.5cm}}c@{}}
-%       \includegraphics[page=1,width=.5\textwidth]{plot_igr1}
-%   \end{tabular}
-%\end{figure}
+\begin{figure}[H]
+   \centering
+   \begin{tabular}{@{}c@{\hspace{.5cm}}c@{}}
+       \includegraphics[page=1,width=.5\textwidth]{plot_igr1}
+   \end{tabular}
+\end{figure}
 
 For more defined cut-off values:
 <<two_igraphs, eval=TRUE, echo=TRUE>>=

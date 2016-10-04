@@ -25,19 +25,21 @@ splineNetRecon <- function(eSetObject, treatmentType, probesForNR="all", cutoff.
 
 ### prepare data ###
 	# introduce new name for ordering samples according to time and replicates
-	colnames(exprs(eSetObject)) <- paste("T", pData(eSetObject)$Time, "_", pData(eSetObject)$Treatment, "_", pData(eSetObject)$Replicate, sep="")
-	exprs.NR = exprs(eSetObject)[probesForNR, which(pData(eSetObject)$Treatment == treatmentType)]
-	exprs.NR = exprs.NR[,mixedsort(colnames(exprs.NR))]
+	#colnames(exprs(eSetObject)) <- paste("T", pData(eSetObject)$Time, "_", pData(eSetObject)$Treatment, "_", pData(eSetObject)$Replicate, sep="")
+	exprs.NR <- exprs(eSetObject)  # included 2 lines, inactivated foregoing line, Herbert Braselmann 2016/10/04
+	colnames(exprs.NR) <- paste("T", pData(eSetObject)$Time, "_", pData(eSetObject)$Treatment, "_", pData(eSetObject)$Replicate, sep="")
+	exprs.NR <- exprs(eSetObject)[probesForNR, which(pData(eSetObject)$Treatment == treatmentType)]
+	exprs.NR <- exprs.NR[,mixedsort(colnames(exprs.NR))]
 
 	# introduce new help variable for identifying numbers of replicates 
 	help_repeats <- paste("T", pData(eSetObject)$Time, "_", pData(eSetObject)$Treatment, sep="")
-	help_repeats = help_repeats[which(pData(eSetObject)$Treatment == treatmentType)]
-	help_repeats = mixedsort(help_repeats)
+	help_repeats <- help_repeats[which(pData(eSetObject)$Treatment == treatmentType)]
+	help_repeats <- mixedsort(help_repeats)
 
 	# check for replicates
-	repeats = c()
+	repeats <- c()
 	for(i in unique(help_repeats)) {
-		repeats = c(repeats, length(which(help_repeats == i)))
+		repeats <- c(repeats, length(which(help_repeats == i)))
 	}
 
 	exprs.NR = t(exprs.NR)
