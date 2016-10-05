@@ -29,7 +29,15 @@ Helmholtz Zentrum M\"unchen
 \begin{center}
 {\tt braselm@helmholtz-muenchen.de}
 \end{center}
+\vspace{5cm}
+\begin{frame}
+\centering
+\fbox{\begin{tabular}{@{}l@{}}
+This free open-source software implements academic research by the authors and \\ co-workers. If you use it, please support the project by citing the journal article \\ referred to in the overview section.
+\end{tabular}}
+\end{frame}
 
+\newpage
 \tableofcontents
 
 %============================================================
@@ -51,11 +59,14 @@ Gene expression data must be provided as a Biobase object of class {\tt Expressi
 
 Replicates are not required. The time points for compared treatment groups should be identical. Visualisation of results is demonstrated using simulated data ({\tt TCsimData}).
 
+<<eval=FALSE, echo=FALSE>>=
+#path1 <- "/Users/hbraselmann/R/Bioc3.4dev/library"
+#path2 <- "/Library/Frameworks/R.framework/Versions/3.3/Resources/library"
+#.libPaths(c(path1, path2))
+#.libPaths()
+@
+
 <<eval=TRUE, echo=TRUE>>=
-path1 <- "/Users/hbraselmann/R/Bioc3.4dev/library"
-path2 <- "/Library/Frameworks/R.framework/Versions/3.3/Resources/library"
-.libPaths(c(path1, path2))
-.libPaths()
 library(splineTimeR)
 data(TCsimData)
 head(pData(TCsimData),8)
