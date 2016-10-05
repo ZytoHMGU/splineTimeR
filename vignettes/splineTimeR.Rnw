@@ -17,7 +17,7 @@
 \SweaveOpts{concordance=TRUE}
 
 \title{\bf Using splineTimeR package}
-\author{Agata Michna}
+\author{Agata Michna and Herbert Braselmann}
 
 \maketitle
 
@@ -27,7 +27,7 @@ Helmholtz Zentrum M\"unchen
 \end{center}
 
 \begin{center}
-{\tt agata.michna@helmholtz-muenchen.de}
+{\tt braselm@helmholtz-muenchen.de}
 \end{center}
 
 \tableofcontents
@@ -36,7 +36,7 @@ Helmholtz Zentrum M\"unchen
 \section{Overview}
 This package provides functions for differential gene expression analysis of time-course gene expression data, pathway enrichment analysis and time dependent gene regulatory network reconstruction. The functions in this package gather and simplify the usage of other Bioconductor packages and R-functions.
 
-A natural cubic spline regression model for an experimental two-way designs with one treatment factor and time as continuous variable is fitted to the experimental time-course data. Two treatment groups (e.g. control and treated) have to be provided. Time dependent expression data must be available for each group. Parameters of fitted spline regression models are used to define differentially expressed over time genes. Those genes may further be used for pathway enrichment analysis and/or the reconstruction of time dependent gene regulatory association networks.
+A natural cubic spline regression model for an experimental two-way designs with one treatment factor and time as continuous variable is fitted to the experimental time-course data. Two treatment groups (e.g. control and treated) have to be provided. Time dependent expression data must be available for each group. Parameters of fitted spline regression models are used to define differentially expressed over time genes. Those genes may further be used for pathway enrichment analysis and/or the reconstruction of time dependent gene regulatory association networks. The workflow implemented in this package is explained and discussed in detail in \citet{Michna2016}. Expression microarray data generated in our laboratory are are available from the ArrayExpress database (accession number E-MTAB-4829).
 
 %============================================================
 \section{Data preparation}
@@ -52,6 +52,10 @@ Gene expression data must be provided as a Biobase object of class {\tt Expressi
 Replicates are not required. The time points for compared treatment groups should be identical. Visualisation of results is demonstrated using simulated data ({\tt TCsimData}).
 
 <<eval=TRUE, echo=TRUE>>=
+path1 <- "/Users/hbraselmann/R/Bioc3.4dev/library"
+path2 <- "/Library/Frameworks/R.framework/Versions/3.3/Resources/library"
+.libPaths(c(path1, path2))
+.libPaths()
 library(splineTimeR)
 data(TCsimData)
 head(pData(TCsimData),8)
